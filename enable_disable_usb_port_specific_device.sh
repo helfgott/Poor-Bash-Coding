@@ -20,7 +20,6 @@ if [ ! -f $LOCK ]; then
                         :
                 else
                         PORTID=$(echo $PORTID | tr "/" " "|awk '{print $5}')
-                        PORTID=$(echo ${PORTID::3} > pinpad.lock)
                 fi
         done
 fi
