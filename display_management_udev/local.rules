@@ -1,0 +1,5 @@
+# mortiz: card0 (default display ) | i2c-6 (dock DP device)
+
+KERNEL=="i2c-[0-9]",ATTRS{vendor}=="0x8086",ACTION=="add",SUBSYSTEM=="i2c-dev", RUN+="/usr/local/bin/monitor.sh 'i2c' 'add' 'i2c-dev'"
+KERNEL=="i2c-[0-9]",ATTRS{vendor}=="0x8086",ACTION=="remove",SUBSYSTEM=="i2c-dev", RUN+="/usr/local/bin/monitor.sh 'i2c' 'remove' 'i2c-dev'"
+
