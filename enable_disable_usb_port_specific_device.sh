@@ -3,6 +3,14 @@
 # miguel.ortiz
 # enable-disable specific port if a device from devices.list were connected 
 
+# Usage: 
+# ./enable_disable_usb_port_specific_device.sh ON 	# Enables the device
+# ./enable_disable_usb_port_specific_device.sh OFF 	# Disable the device
+# devices.list # Must contain the ID from lsusb of the device we want to manage
+# for several devices consider adding a new variable!
+
+
+
 # ---------------------------------------enable this commented lines for logging (and at the end of the script)
 #touch cheap_pinpad.log
 #exec 1> >(tee -a cheap_pinpad.log) 2>&1
