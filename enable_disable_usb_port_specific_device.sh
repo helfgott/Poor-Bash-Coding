@@ -7,6 +7,9 @@
 #touch cheap_pinpad.log
 #exec 1> >(tee -a cheap_pinpad.log) 2>&1
 
+# FOR THIS SCRIPT TO WORK YOU NEED DEVICES.LIST, READ THE DOCUMENTATION!!
+# read: http://migueleonardortiz.com.ar/linux/learning-how-to-disable-specific-usb-devices-by-their-ports-in-linux/1645
+
 LOCK='/tmp/pinpad.lock'
 BINDS='/sys/bus/usb/drivers/usb'
 BINDF="$BINDS/bind"
@@ -61,7 +64,7 @@ function verify_device() {
    
 if [ -s "$LOCK" ]
 then
-	DEVPORT=$(cat pinpad.lock)     
+	DEVPORT=$(cat $LOCK)     
 	verify_device $DEVPORT
 else 
         exit 6 # se registro mal el dispositivo en pinpad.lock
